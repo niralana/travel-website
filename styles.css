@@ -53,6 +53,20 @@ img {
 	max-width: 100%;
 }
 
+
+
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+.loaded {
+    opacity: 1;
+}
+
 /* --- Header */
 
 header.main {
@@ -97,36 +111,53 @@ header.main p {
 @keyframes slideLeft {
 	0% {transform: translateX(500px);}
 	30% {transform: translateY(0);}
-	60% {transform: translateY(40px);}
 }
 
 nav ul {
-	position: absolute;
-	top: 30px;
-	left: 35%;
 	text-align: center;
 	z-index: 100;
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto;
+	width: 100%;
+	top: 30px;
 }
 
-nav ul li {
+nav.main ul li {
 	display: inline-block;
 	margin: 0 20px;
+	transition-duration: 300ms;
 }
 
 nav.main {
 	color: #5DBCD2;
 	letter-spacing: 0.1em;
+
 }
+
+nav.main ul li:hover:not(.logo-globe) {
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+
+.logo-globe {
+	font-size: 50px;
+	color: #fff;
+}
+
 
 .btn { 
 	display: block;
 	border: 3px solid #fff;
 	position: absolute;
-    top: 70%;
+    top: 60%;
     right: 20%;
     text-align: center;
     color: #fff;
-    animation: slideLeft 6s cubic-bezier(.4,.36,.35,.92);
+    animation: slideLeft 3s cubic-bezier(.4,.36,.35,.92);
     transition-duration: 1s;
 }
 
@@ -137,12 +168,12 @@ nav.main {
 	line-height: 0;
     vertical-align: middle;
     padding: 20px 10px;
-    font-weight: bold;
+	font-size: 1.4em;
 }
 
 .btn:hover, .btn:active {
 	background: #fff;
-	color: #000;
+	color: #5DBCD2;
 }
 
 .overlay {
