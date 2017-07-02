@@ -14,6 +14,7 @@ body, html {
 	font-size: 16px;
 	width: 100%;
 	height: 100%;
+	letter-spacing: 0.04em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -87,6 +88,7 @@ header.main h1, header.main p {
 header.main h1 {
 	/* vertical align starts - you can make the element vertically centred by changing translateY(-50%) */
 	position: relative;
+	z-index: 1000;
     top: 50%;
     -webkit-transform: translateY(-70%);
     -ms-transform: translateY(-70%);
@@ -107,6 +109,11 @@ header.main p {
 	60% {transform: translateY(-40px);}
 }
 
+@keyframes navSlideDown {
+	0% {transform: translateY(0);}
+	100% {transform: translateY(120px);}
+}
+
 
 @keyframes slideLeft {
 	0% {transform: translateX(500px);}
@@ -122,7 +129,8 @@ nav ul {
 	margin-left: auto; 
 	margin-right: auto;
 	width: 100%;
-	top: 30px;
+	top: -100px;
+	animation: navSlideDown 3s 2.5s ease forwards;
 }
 
 nav.main ul li {
@@ -183,9 +191,9 @@ nav.main ul li:hover:not(.logo-globe) {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,05) 0%,rgba(0,0,0,0.1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
@@ -198,8 +206,111 @@ nav.main ul li:hover:not(.logo-globe) {
 	border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+#about, #discover, #contact {
+	height: 70%;
+	background-position: 50% 40%;
+}
 
 
-.row {
+#about {
+	background: url("img/forest.jpg");
+}
 
+
+#discover {
+	background: url("img/view.jpg");
+}
+
+#contact {
+	background: url("img/frb1.jpg");
+	background-position: 50% 50%;
+}
+
+.container {
+	background: #fff;
+	width: 90%;
+	margin: 0 auto;
+	padding: 100px;
+	clear: both;
+}
+
+
+/* Form */ 
+
+
+
+form {
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-bottom: 70px;
+}
+
+form span {
+	font-size: 2em;
+	vertical-align: top;
+	color: rgba(0,0, 0, 0.4);
+}
+
+input, textarea {
+	padding: 10px;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+input {
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 80%;
+	border:1px solid rgba(0, 0, 0, 0.2);
+	height: 200px;
+}
+
+.left, .right {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+
+
+input[type="submit"].btn-submit {
+	webkit-appearance: none;
+    padding: 15px 20px;
+    background-color:#FFF;
+    color: #fff;
+    font-weight:bold;
+    border: solid #666 1px;
+    font-size: 14px;
+	display: block;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 20px;
+	border: 2px solid #5DBCD2;
+	background: #5DBCD2;
+	font-size: 1.2em;
+}
+
+aside.quote {
+	padding: 30px;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #BBB;
+	letter-spacing: 0.05em;
+}
+
+/* Footer bottom */
+
+footer.bottom {
+	width: 100%;
+	line-height: 100px;
+	vertical-align: middle;
+	background: #5DBCD2;
+	color: #fff;
+	padding: 20px;
+}
+
+footer.bottom p span {
+	border-bottom: 1px solid #fff;
 }
